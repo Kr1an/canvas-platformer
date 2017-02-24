@@ -1,4 +1,17 @@
-canvas{
-    box-sizing: border-box;
-    border: 2px solid #000;
+body{
+    font-family: Delux;
+    color:#333;
+}
+
+
+@font-face {
+  font-family: MyriadPro-Regular;
+  src:url('fonts/MyriadPro-Regular.otf');
+
+}
+
+@font-face {
+  font-family: Delux;
+  src:url('fonts/dlxfont.ttf');
+
 }

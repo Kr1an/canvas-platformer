@@ -1,8 +1,11 @@
 class GameStateManager{
+    
     constructor(){
-        this.NUMGAMESTATES = 2
+        this.NUMGAMESTATES = 4
         this.MENUSTATE = 0
         this.LEVEL1STATE = 1
+        this.HELPSTATE = 2
+        this.EXITSTATE = 3
     
         this.gameStates = new Array(this.NUMGAMESTATES)
         this.currentState = this.MENUSTATE
@@ -10,8 +13,14 @@ class GameStateManager{
     }
 
     loadState(state){
-        if(state == this.MENUSTATE){
-            this.gameStates[this.currentState] = new MenuState();
+        if(state === this.MENUSTATE){
+            this.gameStates[this.currentState] = new MenuState(this);
+        }else if( state === this.LEVEL1STATE){
+
+        }else if( state === this.HELPSTATE){
+
+        }else if( state === this.EXITSTATE){
+            
         }
     }
 
@@ -20,9 +29,9 @@ class GameStateManager{
     }
 
     setState(state){
-        unloadState(this.currentState)
+        this.unloadState(this.currentState)
         this.currentState = state
-        loadState(this.currentState)
+        this.loadState(this.currentState)
     }
 
     update(context){
@@ -30,8 +39,8 @@ class GameStateManager{
         //console.log("update")
     }
 
-    draw(){
-        // this.gameState[this.currentState].draw()
+    draw(context){
+        this.gameStates[this.currentState].draw(context)
         //console.log("draw")
     }
     
