@@ -6,6 +6,8 @@ class GameStateManager{
         this.LEVEL1STATE = 1
         this.HELPSTATE = 2
         this.EXITSTATE = 3
+
+        this.running = true
     
         this.gameStates = new Array(this.NUMGAMESTATES)
         this.currentState = this.MENUSTATE
@@ -20,7 +22,7 @@ class GameStateManager{
         }else if( state === this.HELPSTATE){
 
         }else if( state === this.EXITSTATE){
-            
+            this.running = false
         }
     }
 
@@ -35,13 +37,11 @@ class GameStateManager{
     }
 
     update(context){
-        // this.gameState[this.currentState].update()
-        //console.log("update")
+        this.gameStates[this.currentState].update()
     }
 
     draw(context){
         this.gameStates[this.currentState].draw(context)
-        //console.log("draw")
     }
     
     keyDown(key){
