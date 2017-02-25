@@ -16,9 +16,9 @@ class GameStateManager{
 
     loadState(state){
         if(state === this.MENUSTATE){
-            this.gameStates[this.currentState] = new MenuState(this);
+            this.gameStates[this.currentState] = new MenuState(this)
         }else if( state === this.LEVEL1STATE){
-
+            this.gameStates[this.currentState] = new Level1State(this)
         }else if( state === this.HELPSTATE){
 
         }else if( state === this.EXITSTATE){

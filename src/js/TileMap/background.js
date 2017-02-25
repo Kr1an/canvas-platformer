@@ -1,8 +1,15 @@
 class Background{
-    constructor(imgPath){
-        this.img = null
-        this.isImageLoaded = false
-        this.loadImage(imgPath)
+    constructor(imgPath, color){
+        this.isImage = typeof imgPath !== 'undefined'
+        this.isPlaneColor = typeof color !== 'undefined'
+        if(this.isImage){
+            this.img = null
+            this.isImageLoaded = false
+            this.loadImage(imgPath)
+        } else if(this.isPlaneColor){
+            this.color = color
+        }
+        
     }
 
     loadImage(imgPath){
@@ -10,9 +17,7 @@ class Background{
         this.img = new Image()
         this.img.onload = function(){
             that.isImageLoaded = true
-            console.log("asdf")
         }
-        imgPath = './src/resources/mainMenu.jpg'
         this.img.src = imgPath
     }
 
@@ -21,12 +26,13 @@ class Background{
     }
 
     draw(context){
-        if(this.isImageLoaded){
+        if(this.isImage){
             context.beginPath()
-            context.fillStyle = '#000'
-            context.fillRect(0, 0, WIDTH, HEIGHT)
-            // context.drawImage(this.img, 0, 0, WIDTH, HEIGHT)
-        }
-        
+            context.drawImage(this.img, 0, 0, GamePanel.WIDTH, GamePanel.HEIGHT)
+        }else if(this.isPlaneColor){
+            context.beginPath()
+            context.fillStyle = this.color
+            context.fillRect(0, 0, GamePanel.WIDTH, GamePanel.HEIGHT)
+        }        
     }
 }

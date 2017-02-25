@@ -1,12 +1,9 @@
-const WIDTH = 640
-const HEIGHT = 480
-const FPS = 60
 class GamePanel{
 
     constructor(){
         this.panel = null
         this.context = null  
-        this.targetTime = 1000 / FPS
+        this.targetTime = 1000 / GamePanel.FPS
 
         this.gsm = new GameStateManager()
         this.setContentPanel()
@@ -31,8 +28,8 @@ class GamePanel{
     setContentPanel(){
         this.panel = document.getElementById("canvas")
         this.context = this.panel.getContext('2d')
-        this.panel.width = WIDTH;
-        this.panel.height = HEIGHT;
+        this.panel.width = GamePanel.WIDTH;
+        this.panel.height = GamePanel.HEIGHT;
     }
     
    
@@ -73,5 +70,9 @@ class GamePanel{
         document.removeEventListener('keydown', this.foo, false)
     }
 }
+
+GamePanel.WIDTH = 640
+GamePanel.HEIGHT = 480
+GamePanel.FPS = 60
 
 

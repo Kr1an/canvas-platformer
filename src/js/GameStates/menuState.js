@@ -1,6 +1,6 @@
 class MenuState{
     constructor(gsm){
-        this.background = new Background('')
+        this.background = new Background(undefined, "#000")
         this.currentChoice = 0
         this.options = ['Play', 'Help', 'Exit']
         this.gsm = gsm
