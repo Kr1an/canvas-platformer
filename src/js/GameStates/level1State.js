@@ -35,7 +35,7 @@ class Level1State{
             '1  0  0  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1',
             '1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1',
             '1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1',
-            '1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1',
+            '1  0  0  0  0  1  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1',
             '1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1',
             '1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1',
             '1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1',
@@ -75,10 +75,12 @@ class Level1State{
             this.player.left = true
         }else if(key === 'ArrowRight'){
             this.player.right = true
-        }else if(key === 'Space'){
+        }else if(key === 'Space'  || key === 'ArrowUp'){
             this.player.jumping = true
         }else if(key === 'KeyR'){
-            GamePanel.FPS = 10
+            GamePanel.FPS = 15
+        }else if(key === 'ArrowDown'){
+            this.player.setLowMode()
         }
         
     }
@@ -87,11 +89,14 @@ class Level1State{
             this.player.left = false
         }else if(key === 'ArrowRight'){
             this.player.right = false
-        }else if(key === 'Space'){
+        }else if(key === 'Space' || key === 'ArrowUp'){
             this.player.jumping = false
             this.player.canJump = true
         }else if(key === 'KeyR'){
             GamePanel.FPS = 60
+        }else if(key === 'ArrowDown'){
+            this.player.setNormalMode()
+            this.player.y = this.player.y-18
         }
         
     }

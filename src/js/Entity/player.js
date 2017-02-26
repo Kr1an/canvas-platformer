@@ -1,26 +1,46 @@
 class Player extends MapObject{
     constructor(tileMap){
         super(tileMap)
-        this.width = 32
-        this.height = 32
-        this.cwidth = 32
-        this.cheight = 32
-        this.moveSpeed = .5
-        this.maxSpeed = 2.5
-        this.stopSpeed = 0.5
-        this.fallSpeed = 0.2
-        this.maxFallSpeed = 4
-        this.jumpStart = -7
-        this.stopJumpSpeed = 2
-        this.jumpCount = 0
+        this.setNormalMode();
         this.canJump = true
-        this.maxJumpTimes = 2
+        this.jumpCount = 0
 
         let img = new Image()
         img.src = './src/resources/Sprites/Player/Player-1.png'
         this.animation = new Animation([img], 100)
 
         this.facingRight = true
+    }
+    setNormalMode(){
+        this.width = 32
+        this.height = 40
+        this.cwidth = 32
+        this.cheight = 40
+        this.moveSpeed = 1*0.5
+        this.maxSpeed = 5*0.5
+        this.stopSpeed = 2*0.7
+        this.fallSpeed = 0.5*0.7
+        this.maxFallSpeed = 9
+        this.jumpStart = -10*0.85
+        this.stopJumpSpeed = 3*0.7
+        this.maxJumpTimes = 1
+        this.canJumpMoreThenOnce = false
+    }
+    setLowMode(){
+        this.width = 32
+        this.height = 16
+        this.cwidth = 32
+        this.cheight = 16
+        this.moveSpeed = .005
+        this.maxSpeed = 5
+        this.stopSpeed = 0.05
+        this.fallSpeed =  1
+        this.maxFallSpeed = 9
+        this.jumpStart = -7
+        this.stopJumpSpeed = 3        
+        this.maxJumpTimes = 0
+        this.canJumpMoreThenOnce = false
+
     }
 
     getNextPosition() {
@@ -51,12 +71,8 @@ class Player extends MapObject{
 				}
 			}
 		}
-		
 
-
-
-
-		if(this.jumping && this.jumpCount < this.maxJumpTimes && this.canJump){
+        if(this.jumping && this.jumpCount < this.maxJumpTimes && this.canJump && (this.canJumpMoreThenOnce || !this.falling)){
             this.canJump = false
             this.jumpCount ++
 			this.dy = this.jumpStart
