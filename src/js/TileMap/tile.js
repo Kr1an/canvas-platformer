@@ -7,8 +7,9 @@ class Tile{
 }
 
 Tile.NORMAL = 0;
-Tile.BLOCKED = 1;
-Tile.KILLING = 2;
+Tile.BLOCKED = 2;
+Tile.KILLING = 1;
 Tile.SAVING = 3;
 Tile.OTHER = 4;
-Tile.NUMOFTYPES = 5
+Tile.COINSPAWN = 8
+Tile.NUMOFTYPES = 10

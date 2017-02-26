@@ -24,7 +24,7 @@ class TileMap{
 
     loadTiles(){
         this.tiles = new Array(Tile.NUMOFTYPES).fill(null).map((i, idx)=>{
-            if(idx === Tile.NORMAL){
+            if(idx === Tile.NORMAL || idx === Tile.COINSPAWN){
                 return new Tile('./src/resources/Sprites/Tiles/Tile-normal-1.png', Tile.NORMAL)
             }else if(idx === Tile.BLOCKED || true){
                 return new Tile("./src/resources/Sprites/Tiles/Tile-blocked-1.png", Tile.BLOCKED)
@@ -35,10 +35,18 @@ class TileMap{
 
     }
 
-    loadMap(mapTxt){
-        this.map = mapTxt.map((i, idx)=>{
-            return i.split(' ').filter((x)=>x!=='').map((x)=>+x)
+    loadMap(mapJSON){
+
+        this.map = new Array(mapJSON.levelArray[0].height)
+            .fill(0)
+        
+        this.map = this.map.map((i, idx)=>{
+            return mapJSON.levelArray[0].map.slice(mapJSON.levelArray[0].width*idx, mapJSON.levelArray[0].width*(idx+1))
         })
+
+        // this.map = mapTxt.map((i, idx)=>{
+        //     return i.split(' ').filter((x)=>x!=='').map((x)=>+x)
+        // })
         this.numCols = this.map[0].length
         this.numRows = this.map.length
         this.width = this.numCols * this.tileSize;

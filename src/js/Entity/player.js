@@ -12,9 +12,9 @@ class Player extends MapObject{
         this.facingRight = true
     }
     setNormalMode(){
-        this.width = 32
+        this.width = 25
         this.height = 40
-        this.cwidth = 32
+        this.cwidth = 25
         this.cheight = 40
         this.moveSpeed = 1*0.5
         this.maxSpeed = 5*0.5
@@ -27,9 +27,9 @@ class Player extends MapObject{
         this.canJumpMoreThenOnce = false
     }
     setLowMode(){
-        this.width = 32
+        this.width = 28
         this.height = 16
-        this.cwidth = 32
+        this.cwidth = 28
         this.cheight = 16
         this.moveSpeed = .005
         this.maxSpeed = 5
