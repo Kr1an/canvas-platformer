@@ -51,19 +51,34 @@ class TileMap{
     }
 
     setPosition(x, y){
-        this.x = x
-        this.y = y
+        
+        this.x = -(x / (this.tileSize*20) | 0) * this.tileSize*20
+        this.y = -(y / (this.tileSize*15) | 0) * this.tileSize*15
+        
+        
 
-        this.colOffset = Math.round(this.x / this.tileSize)
-        this.rowOffset = Math.round(this.y / this.tileSize)
+        this.fixBounds()
+        this.colOffset = -this.x/this.tileSize | 0
+        this.rowOffset = -this.y/this.tileSize | 0
+        
+        
+        
     }
+
+    fixBounds() {
+		if(this.x < this.xmin) this.x = this.xmin;
+		if(this.y < this.ymin) this.y = this.ymin;
+		if(this.x > this.xmax) this.x = this.xmax;
+		if(this.y > this.ymax) this.y = this.ymax;
+	}
+
 
     draw(context){
         for(let row = this.rowOffset; row < this.rowOffset + this.numRowsToDraw; row++){
-            if(row >= this.numRows) break
+            if(row >= this.numRows || row < 0) break
             for(let col = this.colOffset; col < this.colOffset + this.numColsToDraw; col++){
-                if(col >= this.numCols) break
-                if(this.map[row][col] <= 0) continue
+                if(col >= this.numCols || col <0) break
+                    if(this.map[row][col] <= 0) continue
                 context.drawImage(
                     this.tiles[this.map[row][col]].img, 
                     -this.colOffset*this.tileSize + col*this.tileSize, 

@@ -37,7 +37,10 @@ class MenuState{
         }else if(key === 'Enter'){
             this.select()
         }
-        console.log(this.currentChoice)
+    }
+
+    keyUp(key){
+        
     }
 
     select(){

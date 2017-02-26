@@ -36,33 +36,47 @@ class GamePanel{
 
     run(){      
         let that = this
-        let mainLoop = setInterval(()=>{
-            if(!this.gsm.running){
-                
-                clearInterval(mainLoop)
-                this.onExit()
+
+        
+
+        this.mainLoop = function () {
+            
+
+            if(!that.gsm.running){
+                that.onExit()
                 return
             }
             that.update()
             that.draw()
             that.drawToScreen()
-            
-                
-
-        }, that.targetTime*0.5)       
+            setTimeout( that.mainLoop, that.getFPS() );
+        }
+        setTimeout( this.mainLoop, this.getFPS() );     
+    }
+    
+    getFPS(){
+        return 1000/GamePanel.FPS
     }
 
     setKeyListeners(){
         let that = this
-        this.foo = function(e){
+        this.onKeyDown = function(e){
             that.keyDown(e.code)
             
         }
-        window.addEventListener('keydown', that.foo)
+        this.onKeyUp = function(e){
+            that.keyUp(e.code)
+            
+        }
+        window.addEventListener('keydown', that.onKeyDown)
+        window.addEventListener('keyup', that.onKeyUp)
     }
 
     keyDown(key){  
         this.gsm.keyDown(key);
+    }
+    keyUp(key){
+        this.gsm.keyUp(key);
     }
 
     onExit(){

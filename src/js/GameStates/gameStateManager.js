@@ -47,4 +47,7 @@ class GameStateManager{
     keyDown(key){
         this.gameStates[this.currentState].keyDown(key)
     }
+    keyUp(key){
+        this.gameStates[this.currentState].keyUp(key)
+    }
 }
