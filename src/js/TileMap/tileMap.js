@@ -26,6 +26,8 @@ class TileMap{
         this.tiles = new Array(Tile.NUMOFTYPES).fill(null).map((i, idx)=>{
             if(idx === Tile.NORMAL || idx === Tile.COINSPAWN){
                 return new Tile('./src/resources/Sprites/Tiles/Tile-normal-1.png', Tile.NORMAL)
+            }else if(idx === Tile.KILLING){
+                return new Tile("./src/resources/Sprites/Tiles/Tile-killing-1.png", Tile.KILLING)
             }else if(idx === Tile.BLOCKED || true){
                 return new Tile("./src/resources/Sprites/Tiles/Tile-blocked-1.png", Tile.BLOCKED)
             }

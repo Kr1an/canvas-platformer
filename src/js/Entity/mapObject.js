@@ -158,6 +158,10 @@ class MapObject{
 		this.ymap = this.tileMap.y;
 	}
 
+    get getCurrRow(){return (this.x/this.tileSize) | 0}
+    
+    get getCurrCol(){return (this.y/this.tileSize) | 0}
+
     notOnScreen(){
         return this.x + this.xmap + this.width < 0 ||
 			this.x + this.xmap - this.width > GamePanel.WIDTH ||

@@ -9,11 +9,25 @@ class Player extends MapObject{
         this.currentAction = -1
         this.gameover = false
         this.dead = false
+        this.health = 1
 
        
         this.loadSprites()
 
         this.facingRight = true
+    }
+
+    checkAttack(){
+        if(this.tileMap.map[this.getCurrCol][this.getCurrRow] === Tile.KILLING){
+			this.hit(20);
+		}
+    }
+    hit(damage){
+        this.health -= damage;
+		if(this.health < 0) 
+            this.health = 0
+		if(this.health == 0) 
+            this.dead = true
     }
 
     loadSprites(){
