@@ -53,7 +53,7 @@ class MapObject{
 
     }
     getRect(){
-        return new Rect(this.x, this.y, this.cwidth, this.cheight)
+        return new Rect((this.x + this.xmap - this.width / 2) | 0, (this.y + this.ymap - this.height / 2) | 0, this.cwidth, this.cheight)
     }
 
     calculateCorners(x, y){
@@ -201,8 +201,8 @@ class MapObject{
 
 class Rect{
     constructor(x, y, cwidth, cheight){
-        this.x = x|0 - cwidth
-        this.y = y|0 - cheight
+        this.x = x
+        this.y = y
         this.width = cwidth
         this.height = cheight
     }

@@ -139,8 +139,10 @@ class Player extends MapObject{
 
     update(){
         this.getNextPosition()
+        
 		this.checkTileMapCollision()
 		this.setPosition(this.xtemp, this.ytemp)
+        this.setMapPosition();
         this.doubleJumpValidation()
         this.checkAnimation()
     }
@@ -214,7 +216,7 @@ class Player extends MapObject{
 
     draw(context) {
 		
-		this.setMapPosition();
+		
 				
 		super.draw(context);
 	}
