@@ -175,13 +175,19 @@ class MapObject{
 			)
 		}
 		else {
+            context.save()
+            context.scale(-1, 1);
+            
             context.drawImage(
 				this.animation.getFrame(),
-				this.x + this.xmap - this.width / 2.0 + this.width,
-				this.y + this.ymap - this.height / 2.0, 
-                -this.width,
+                -(this.x + this.xmap - this.width / 2.0 + this.width) | 0,
+                (this.y + this.ymap - this.height / 2.0) | 0, 
+                this.width,
 				this.height
 			)
+           context.restore()
+            
+            
 		}
     }
 

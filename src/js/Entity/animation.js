@@ -1,7 +1,15 @@
 class Animation{
 
-    constructor(frames, delay){
+    constructor(){
+        this.frames = null
+        this.delay = -1
+    }
+
+    setFrames(frames){
         this.frames = frames
+    }
+    
+    setDelay(delay){
         this.delay = delay
         this.currentFrame = 0
         this.startTime = Date.now();
@@ -13,7 +21,8 @@ class Animation{
 
         let elapsed = Date.now() - this.startTime
         if(elapsed > this.delay){
-            this.currentFrame++  
+            this.currentFrame++
+            this.startTime = Date.now()  
         }
         if(this.currentFrame >= this.frames.length) {
 			this.currentFrame = 0;

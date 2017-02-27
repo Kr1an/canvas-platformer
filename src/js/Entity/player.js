@@ -4,13 +4,42 @@ class Player extends MapObject{
         this.setNormalMode();
         this.canJump = true
         this.jumpCount = 0
+        this.firing = false
+        this.sprites = null
+        this.currentAction = -1
+        this.gameover = false
+        this.dead = false
 
-        let img = new Image()
-        img.src = './src/resources/Sprites/Player/Player-1.png'
-        this.animation = new Animation([img], 100)
+       
+        this.loadSprites()
 
         this.facingRight = true
     }
+
+    loadSprites(){
+
+        this.sprites = 
+            new Array(Player.ANIMATIONNUM)
+            .fill(new Array(Player.ANIMATIONLENGTH).fill(null))
+  
+        this.sprites = this.sprites.map((i, idx)=>{
+            return i.map((j, jdx)=>{
+                let img = new Image()
+                img.src = `./src/resources/Sprites/Player/${idx}/${jdx}.png`
+                return img
+            })
+        })
+        this.currentAction = Player.IDLE
+        this.animation = new Animation()
+        this.animation.setFrames(this.sprites[this.currentAction])
+        this.animation.setDelay(Player.ANIMEDELAY)
+
+
+
+
+
+    }
+
     setNormalMode(){
         this.width = 25
         this.height = 40
@@ -99,6 +128,64 @@ class Player extends MapObject{
 		this.checkTileMapCollision()
 		this.setPosition(this.xtemp, this.ytemp)
         this.doubleJumpValidation()
+        this.checkAnimation()
+    }
+
+    checkAnimation(){
+
+        // check attack has stopped
+		if(this.currentAction == Player.FIRING) {
+			if(this.animation.hasPlayedOnce()) this.firing = false;
+		}
+
+		if(this.currentAction != Player.DYING && this.dead){
+				this.gameover = true;
+		}
+
+        // set animation
+		else if(this.firing) {
+			if(this.currentAction != Player.FIRING) {
+				this.currentAction = Player.FIRING;
+                this.animation.setFrames(this.sprites[Player.FIRING]);
+				this.animation.setDelay(5);
+			}
+		}
+		else if(this.dy > 0) {
+			if(this.currentAction != Player.FALLING) {
+				this.currentAction = Player.FALLING;
+                this.animation.setFrames(this.sprites[Player.FALLING]);
+				this.animation.setDelay(Player.ANIMEDELAY);
+			}
+		}
+		else if(this.dy < 0) {
+			if(this.currentAction != Player.JUMPING) {
+				this.currentAction = Player.JUMPING;
+                this.animation.setFrames(this.sprites[Player.FALLING]);
+				this.animation.setDelay(Player.ANIMEDELAY);
+			}
+		}
+		else if(this.left || this.right) {
+			if(this.currentAction != Player.WALKING) {
+				this.currentAction = Player.WALKING;
+                this.animation.setFrames(this.sprites[Player.WALKING]);
+				this.animation.setDelay(Player.ANIMEDELAY);
+			}
+		}
+		else {
+			if(this.currentAction != Player.IDLE) {
+				this.currentAction = Player.IDLE;
+                this.animation.setFrames(this.sprites[Player.IDLE]);
+				this.animation.setDelay(Player.ANIMEDELAY);
+			}
+		}
+		
+		this.animation.update();
+		
+		// set direction
+		if(this.currentAction != Player.FIRING) {
+			if(this.right) this.facingRight = true;
+			if(this.left) this.facingRight = false;
+		}
     }
 
     doubleJumpValidation(){
@@ -118,3 +205,22 @@ class Player extends MapObject{
 		super.draw(context);
 	}
 }
+
+
+// Animation Options
+Player.ANIMATIONNUM = 6
+
+// Animation Length
+Player.ANIMATIONLENGTH = 4
+Player.ANIMEDELAY = 100
+
+// Animations
+Player.WALKING = 0
+Player.IDLE = 1
+Player.FALLING = 2
+Player.JUMPING = 3
+Player.FIRING = 4
+Player.DYING = 5
+
+
+

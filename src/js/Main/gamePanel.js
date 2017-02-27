@@ -87,6 +87,6 @@ class GamePanel{
 
 GamePanel.WIDTH = 640
 GamePanel.HEIGHT = 480
-GamePanel.FPS = 60
+GamePanel.FPS = 6
 
 
