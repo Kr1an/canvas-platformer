@@ -49,7 +49,7 @@ class LavaSurfaceEffect extends MapObject{
     checkAnimation(){
         if(this.animation.playedOnce){
             this.facingRight = !this.facingRight
-            if(Math.random()*(this.currentAction+2) | 0){
+            if(Math.random()*(this.currentAction*4+2) | 0){
                 this.changeAnimation()
             }
         }

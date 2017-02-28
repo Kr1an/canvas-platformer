@@ -8,11 +8,11 @@ class Level1State{
         this.textTips = []
         this.lavaSurfaceEffects = []
         this.init()
-        GamePanel.FPS = 5
+        GamePanel.FPS = 60
     }
 
     init(){
-        this.background = new Background(undefined, '#fff')
+        this.background = new Background("./src/resources/Background/NightSky.png")
         this.tileMap = new TileMap(32, Level1State.JSONMap)
         this.tileMap.setPosition(0,0)
         this.respawnPlayer()
@@ -131,12 +131,10 @@ class Level1State{
             this.player.left = true
         }else if(key === 'ArrowRight'){
             this.player.right = true
-        }else if(key === 'Space'  || key === 'ArrowUp'){
+        }else if(key === 'Space'){
             this.player.jumping = true
-        }else if(key === 'KeyR'){
+        }else if(key === 'KeyR' && this.player.mode == Player.LOWMODE){
             GamePanel.FPS = 15
-        }else if(key === 'ArrowDown'){
-            this.player.setLowMode()
         }
         
     }
@@ -145,15 +143,16 @@ class Level1State{
             this.player.left = false
         }else if(key === 'ArrowRight'){
             this.player.right = false
-        }else if(key === 'Space' || key === 'ArrowUp'){
+        }else if(key === 'Space'){
             this.player.jumping = false
             this.player.canJump = true
-        }else if(key === 'KeyR'){
+        }else if(key === 'KeyR' && this.player.mode == Player.LOWMODE){
             GamePanel.FPS = 60
         }else if(key === 'ArrowDown'){
-            this.player.setNormalMode()
-            this.player.y = this.player.y-15
-        }   
+            this.player.modeDown()
+        }else if(key === 'ArrowUp'){
+            this.player.modeUp()
+        } 
     }
 }
 Level1State.NUMOFSHOWNTIPS = 1
