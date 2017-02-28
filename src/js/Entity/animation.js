@@ -2,6 +2,7 @@ class Animation{
 
     constructor(){
         this.frames = null
+        this.currentFrame = -1
         this.delay = -1
     }
 

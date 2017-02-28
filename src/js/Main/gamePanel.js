@@ -36,16 +36,8 @@ class GamePanel{
 
     run(){      
         let that = this
-
-        
-
         this.mainLoop = function () {
-            
-
-            if(!that.gsm.running){
-                that.onExit()
-                return
-            }
+            if(!that.gsm.running) that.onExit()
             that.update()
             that.draw()
             that.drawToScreen()
@@ -60,14 +52,8 @@ class GamePanel{
 
     setKeyListeners(){
         let that = this
-        this.onKeyDown = function(e){
-            that.keyDown(e.code)
-            
-        }
-        this.onKeyUp = function(e){
-            that.keyUp(e.code)
-            
-        }
+        this.onKeyDown = (e)=>{that.keyDown(e.code)}
+        this.onKeyUp = (e)=>{that.keyUp(e.code)}
         window.addEventListener('keydown', that.onKeyDown)
         window.addEventListener('keyup', that.onKeyUp)
     }

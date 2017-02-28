@@ -24,12 +24,14 @@ class TileMap{
 
     loadTiles(){
         this.tiles = new Array(Tile.NUMOFTYPES).fill(null).map((i, idx)=>{
-            if(idx === Tile.NORMAL || idx === Tile.COINSPAWN){
+            if(idx === Tile.NORMAL){
                 return new Tile('./src/resources/Sprites/Tiles/Tile-normal-1.png', Tile.NORMAL)
             }else if(idx === Tile.KILLING){
                 return new Tile("./src/resources/Sprites/Tiles/Tile-killing-1.png", Tile.KILLING)
-            }else if(idx === Tile.BLOCKED || true){
+            }else if(idx === Tile.BLOCKED){
                 return new Tile("./src/resources/Sprites/Tiles/Tile-blocked-1.png", Tile.BLOCKED)
+            }else{
+                return new Tile('./src/resources/Sprites/Tiles/Tile-normal-1.png', idx)
             }
 
         })

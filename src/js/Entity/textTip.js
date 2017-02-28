@@ -25,7 +25,11 @@ class TextTip extends MapObject{
                 context.beginPath()
                 context.font = this.font
                 context.fillStyle = this.color
-                context.fillText(i, this.xmap + this.x ,this.ymap + this.y  + idx*this.fontSize*1.2 )
+                context.fillText(
+                    i, 
+                    this.xmap + this.x ,
+                    this.ymap + this.y  + idx*this.fontSize*1.2 
+                )
             })
         }
     }
