@@ -22,7 +22,15 @@ class Background{
     }
 
     update(){
+        
 
+    }
+
+    changeImgRandomly(){
+        if((Math.random()*5 | 0) ==4 || true){
+            this.img = new Image()
+            this.img.src = `./src/resources/Background/${Math.random()*3 | 0}.png`
+        }
     }
 
     draw(context){

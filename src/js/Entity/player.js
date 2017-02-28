@@ -82,8 +82,8 @@ class Player extends MapObject{
         this.mode = Player.NORMALMODE
     }
     setLowMode(){
-        this.width = 28
-        this.height = 16
+        this.width = 35
+        this.height = 20
         this.cwidth = 20
         this.cheight = 16
         this.moveSpeed = 0.3

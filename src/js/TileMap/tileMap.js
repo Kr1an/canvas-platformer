@@ -12,6 +12,7 @@ class TileMap{
         this.height = 0
         this.tileSet = null
         this.tiles = null
+        this.lvlChanged = false
 
         this.rowOffset = 0
         this.colOffset = 0
@@ -70,8 +71,12 @@ class TileMap{
         
 
         this.fixBounds()
+        if((this.colOffset !== -this.x/this.tileSize | 0) || (this.rowOffset !== -this.y/this.tileSize | 0)){
+            this.lvlChanged = true
+        }
         this.colOffset = -this.x/this.tileSize | 0
         this.rowOffset = -this.y/this.tileSize | 0
+        
         
         
         
