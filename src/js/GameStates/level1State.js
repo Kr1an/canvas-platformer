@@ -219,7 +219,7 @@ class Level1State{
             this.player.right = true
         }else if(key === 'Space'){
             this.player.jumping = true
-        }else if(key === 'KeyR' && this.player.mode == Player.LOWMODE){
+        }else if(key === 'KeyT' && this.player.mode == Player.LOWMODE){
             GamePanel.FPS = 15
         }
         
@@ -232,7 +232,7 @@ class Level1State{
         }else if(key === 'Space'){
             this.player.jumping = false
             this.player.canJump = true
-        }else if(key === 'KeyR' && this.player.mode == Player.LOWMODE){
+        }else if(key === 'KeyT' && this.player.mode == Player.LOWMODE){
             GamePanel.FPS = 60
         }else if(key === 'ArrowDown'){
             this.player.modeDown()
