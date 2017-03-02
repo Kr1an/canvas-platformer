@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <link href="./src/css/main.css" rel="stylesheet">
+        <script src="./src/js/Lib/jquery.min.js"></script>
+        <script src="./src/js/Main/main.js"></script>
+        <script src="./src/js/Main/gamePanel.js"></script>
+        <script src="./src/js/GameStates/gameStateManager.js"></script>
+        <script src="./src/js/GameStates/menuState.js"></script>
+        <script src="./src/js/TileMap/background.js"></script>
+        <script src="./src/js/TileMap/tileMap.js"></script>
+        <script src="./src/js/TileMap/tile.js"></script>
+        <script src="./src/js/GameStates/level1State.js"></script>
+        <script src="./src/js/Entity/animation.js"></script>
+        <script src="./src/js/Entity/mapObject.js"></script>
+        <script src="./src/js/Entity/coin.js"></script>
+        <script src="./src/js/Entity/player.js"></script>
+        <script src="./src/js/Entity/textTip.js"></script>
+        <script src="./src/js/Entity/lavaSurfaceEffect.js"></script>
+        <script src="./src/js/Entity/enemy.js"></script>
+        <script src="./src/js/Entity/Enemy/horDigger.js"></script>
+        <script src="./src/js/Entity/Enemy/verDigger.js"></script>
+        
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <script>
+            $(document).ready(()=>{
+                new Game().run()
+            })
+        </script>
+    </body>
+</html>
