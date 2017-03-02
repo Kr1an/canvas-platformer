@@ -8,8 +8,6 @@ class GamePanel{
         this.gsm = new GameStateManager()
         this.setContentPanel()
         this.setKeyListeners()
-        console.log(this.panel)
-        console.log(this.context)
     }
 
     update(){
