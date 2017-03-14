@@ -1,0 +1,15 @@
+{
+  "name": "simple-game",
+  "version": "1.0.0",
+  "description": "project purposes: --learn js. --implement full game structure. --code practice. --rolling-scopes-school assigment.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.0",
+    "livejs": "^0.1.10"
+  }
+}

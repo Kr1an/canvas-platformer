@@ -50,8 +50,8 @@ class GamePanel{
 
     setKeyListeners(){
         let that = this
-        this.onKeyDown = (e)=>{that.keyDown(e.code)}
-        this.onKeyUp = (e)=>{that.keyUp(e.code)}
+        this.onKeyDown = (e)=>{e.preventDefault();that.keyDown(e.code)}
+        this.onKeyUp = (e)=>{e.preventDefault();that.keyUp(e.code)}
         window.addEventListener('keydown', that.onKeyDown)
         window.addEventListener('keyup', that.onKeyUp)
     }
