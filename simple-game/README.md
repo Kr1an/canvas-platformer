@@ -1,5 +1,1 @@
-project purposes:
---learn js.
---implement full game structure.
---code practice.
---rolling-scopes-school assigment.
+last release gh-pages hosted version: https://kr1an.github.io/js-canvas-platformer/
