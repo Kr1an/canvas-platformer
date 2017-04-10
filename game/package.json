@@ -1,0 +1,22 @@
+{
+  "name": "game",
+  "version": "1.0.0",
+  "devDependencies": {
+    "css-loader": "^0.28.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
+    "node-sass": "^4.5.2",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.16.1",
+    "webpack": "^2.3.3",
+    "webpack-dev-server": "^2.4.2",
+    "webpack-livereload-plugin": "^0.11.0",
+    "webpack-watch-livereload-plugin": "0.0.1"
+  },
+  "scripts": {
+    "server": "fuser -n tcp -k 8080; live-server . &",
+    "watch": "webpack",
+    "start": "npm run-script server; npm run-script watch;"
+  },
+  "license": "ISC"
+}
