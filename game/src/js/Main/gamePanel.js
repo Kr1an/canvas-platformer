@@ -54,7 +54,8 @@ class GamePanel{
         let usedKeys = [
             'ArrowDown',
             'ArrowUp',
-            'Space'
+            'Space',
+            'KeyC'
         ]
         let that = this
 
