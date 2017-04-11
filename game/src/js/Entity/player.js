@@ -5,7 +5,7 @@ var MapObject = require('./mapObject.js'),
 class Player extends MapObject{
     constructor(tileMap){
         super(tileMap)
-        this.setFlyMode();
+        this.setNormalMode();
         this.canJump = true
         this.jumpCount = 0
         this.firing = false
