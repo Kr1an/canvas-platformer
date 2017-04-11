@@ -1,6 +1,5 @@
 var Background = require('../TileMap/background.js'),
     TileMap = require('../TileMap/tileMap.js'),
-    GamePanel = require('../Main/gamePanel.js'),
     Player = require('../Entity/player.js'),
     TextTip = require('../Entity/textTip.js'),
     Tile = require('../TileMap/tile.js'),
@@ -8,7 +7,8 @@ var Background = require('../TileMap/background.js'),
     Coin = require('../Entity/coin.js'),
     LavaSurfaceEffect = require('../Entity/lavaSurfaceEffect.js'),
     HorDigger = require('../Entity/Enemy/horDigger.js'),
-    VerDigger = require('../Entity/Enemy/verDigger.js')
+    VerDigger = require('../Entity/Enemy/verDigger.js'),
+    GamePanel = require('../Main/gamePanel.js')
 
 
 class Level1State{
@@ -25,6 +25,7 @@ class Level1State{
         this.coins = []
         this.lockers = []
         this.init()
+        GamePanel = require('../Main/gamePanel.js')
         GamePanel.FPS = 60
     }
 
@@ -234,8 +235,8 @@ class Level1State{
             this.player.right = true
         }else if(key === 'Space'){
             this.player.jumping = true
-        }else if(key === 'KeyY' && this.player.mode == Player.LOWMODE){
-            console.log("he")
+        }else if(key === 'KeyC' && this.player.mode == Player.LOWMODE){
+            GamePanel = require('../Main/gamePanel.js')
             GamePanel.FPS = 15
         }
         
@@ -249,8 +250,8 @@ class Level1State{
             
             this.player.jumping = false
             this.player.canJump = true
-        }else if(key === 'KeyT' && this.player.mode == Player.LOWMODE){
-            
+        }else if(key === 'KeyC'){
+            GamePanel = require('../Main/gamePanel.js')
             GamePanel.FPS = 60
         }else if(key === 'ArrowDown'){
             this.player.modeDown()
