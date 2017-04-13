@@ -11,15 +11,14 @@
     "sass-loader": "latest",
     "style-loader": "latest",
     "webpack": "latest",
-    "webpack-dev-server": "latest"
+    "webpack-dev-server": "latest",
+    "jquery": "^3.2.1"
   },
   "scripts": {
     "server": "fuser -n tcp -k 8080; live-server . &",
     "watch": "webpack",
     "start": "npm run-script server; npm run-script watch;"
   },
-  "license": "ISC",
-  "dependencies": {
-    "jquery": "^3.2.1"
-  }
+  "license": "ISC"
+  
 }
