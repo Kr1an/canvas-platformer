@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <link href="dist/main.bundle.css" rel="stylesheet">  
+    </head>
+    <body>
+        <div class="container-game">
+            <canvas id="canvas"></canvas>
+        </div>
+        <div id="help-section" class="container-help">
+            <h1 id="help-ref">help</h1>
+            <div class="controls">
+                <h2 class="item">space - jump</h2>
+                <h2 class="item">Array Left - left</h2>
+                <h2 class="item">Array Right - right</h2>
+                <h2 class="item">Array Up/Down - change mod</h2>
+                <h2 class="item">C - slower time</h2>
+            </div> 
+        </div>
+        <script src="dist/bundle.js"></script>
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script>
+            $("#help-ref").click(function() {$("html, body").animate({ scrollTop: $(document).height() }, "slow");return false;});
+        </script>
+    </body>
+</html>

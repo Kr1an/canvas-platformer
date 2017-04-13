@@ -1,0 +1,25 @@
+{
+  "name": "game",
+  "version": "1.0.0",
+  "devDependencies": {
+    "css-loader": "latest",
+    "extract-text-webpack-plugin": "latest",
+    "file-loader": "latest",
+    "live-server": "latest",
+    "node-sass": "latest",
+    "normalize.scss": "latest",
+    "sass-loader": "latest",
+    "style-loader": "latest",
+    "webpack": "latest",
+    "webpack-dev-server": "latest"
+  },
+  "scripts": {
+    "server": "fuser -n tcp -k 8080; live-server . &",
+    "watch": "webpack",
+    "start": "npm run-script server; npm run-script watch;"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}

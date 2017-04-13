@@ -1,0 +1,50 @@
+@import '../../node_modules/normalize.scss/normalize';
+@font-face {
+  font-family: Delux;
+  src: url('dlxfont.ttf');
+}
+
+$light-color: #FFFFFF;
+$dark-color: #6f7f82;
+
+canvas{
+    height: 80%;  
+}
+.container{
+    width:100%;
+    height:100%;
+    justify-content: space-around;
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+    &-game{
+        @extend .container;
+        height:89%;
+        background: $light-color;
+    }
+
+
+    &-help{
+        @extend .container;
+        background: $dark-color;
+        justify-content: space-between;
+        .controls{
+            height:80%;
+        }
+        h1{
+            color: $light-color;
+            font-family: Delux;
+            font-size: 3rem;
+            user-select: none;
+            cursor: pointer;            
+        }
+        .item{
+            line-height: 5rem;
+            display:flex;
+            color: $light-color;
+            font-family: Delux;
+            font-size: 2rem;
+        }
+
+    }
+}
