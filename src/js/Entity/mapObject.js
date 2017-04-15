@@ -81,10 +81,10 @@ class MapObject{
         // console.log(GamePanel.FPS + " - FPS")
         // console.log("========================")
 		
-	 	this.topLeft = tl == Tile.BLOCKED;
-		this.topRight = tr == Tile.BLOCKED;
-		this.bottomLeft = bl == Tile.BLOCKED;
-		this.bottomRight = br == Tile.BLOCKED;
+	 	this.topLeft = tl == Tile.BLOCKED || tl == Tile.LOCKER;
+		this.topRight = tr == Tile.BLOCKED || tr == Tile.LOCKER;
+		this.bottomLeft = bl == Tile.BLOCKED || bl == Tile.LOCKER;
+		this.bottomRight = br == Tile.BLOCKED || br == Tile.LOCKER;
 
     }
 

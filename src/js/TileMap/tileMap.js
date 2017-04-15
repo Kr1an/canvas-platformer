@@ -34,7 +34,7 @@ class TileMap{
             }else if(idx === Tile.BLOCKED){
                 return new Tile("./src/resources/Sprites/Tiles/Tile-blocked-1.png", Tile.BLOCKED)
             }else if(idx === Tile.LOCKER){
-                return new Tile("./src/resources/Sprites/Tiles/Tile-blocked-1.png", Tile.BLOCKED)
+                return new Tile("./src/resources/Sprites/Tiles/Tile-locker-1.png", Tile.BLOCKED)
             }else{
                 return new Tile('./src/resources/Sprites/Tiles/Tile-normal-1.png', idx)
             }
