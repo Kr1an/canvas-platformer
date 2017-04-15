@@ -363,6 +363,20 @@ th {
 canvas {
   height: 80%; }
 
+* {
+  color: #FFFFFF;
+  font-family: Delux;
+  user-select: none;
+  text-decoration: none; }
+  * h1 {
+    cursor: pointer; }
+
+.help-item {
+  justify-content: flex-start;
+  flex: 1;
+  padding: 30px;
+  text-align: center; }
+
 .container, .container-game, .container-help {
   width: 100%;
   height: 100%;
@@ -371,22 +385,22 @@ canvas {
   display: flex;
   flex-direction: column; }
   .container-game {
-    height: 89%;
+    height: 93%;
     background: #FFFFFF; }
   .container-help {
     background: #6f7f82;
-    justify-content: space-between; }
-    .container-help .controls {
-      height: 80%; }
-    .container-help h1 {
-      color: #FFFFFF;
-      font-family: Delux;
-      font-size: 3rem;
-      user-select: none;
-      cursor: pointer; }
+    justify-content: flex-start; }
     .container-help .item {
-      line-height: 5rem;
-      display: flex;
-      color: #FFFFFF;
-      font-family: Delux;
-      font-size: 2rem; }
+      color: #FFFFFF; }
+
+.info {
+  display: flex; }
+
+.help-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; }
+
+p {
+  font-size: 1.3rem;
+  line-height: 3rem; }
