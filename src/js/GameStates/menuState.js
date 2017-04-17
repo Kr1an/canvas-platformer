@@ -51,7 +51,8 @@ class MenuState{
         if(this.currentChoice === 0){
             this.gsm.setState(this.gsm.LEVEL1STATE)
         }else if(this.currentChoice === 1){
-            this.gsm.setState(this.gsm.HELPSTATE)
+            console.log("Hello, World");
+            // this.gsm.setState(this.gsm.HELPSTATE)
         }else if(this.currentChoice === 2){
             this.gsm.setState(this.gsm.EXITSTATE)
         }

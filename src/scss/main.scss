@@ -43,7 +43,7 @@ canvas{
     &-help{
         @extend .container;
         background: $dark-color;
-        justify-content: flex-start;
+        justify-content: space-between;
         
         .item{
             

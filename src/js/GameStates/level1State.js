@@ -80,24 +80,24 @@ class Level1State{
 
     addTextTips(){
         Level1State.SPAWNLOCATION.push({x: 120, y: 60}) 
-        this.textTips.push(new TextTip(this.tileMap, ['use keyboard to move', '<-left/right->'], 160, 60))
+        this.textTips.push(new TextTip(this.tileMap, ['Use your keyboard to move', '<-left/right->'], 160, 60))
         this.textTips[this.textTips.length-1].setFont(13)
-        this.textTips.push(new TextTip(this.tileMap, ['ok,', 'now we can talk'], 200, 60))
+        this.textTips.push(new TextTip(this.tileMap, ['Ok,', 'now we can talk'], 200, 60))
         this.textTips[this.textTips.length-1].setFont(13)
         this.textTips.push(new TextTip(this.tileMap, ['Greeting, stranger', 'Welcome to','my imagination.'], 285, 50))
-        this.textTips[this.textTips.length-1].setFont(14)
-        this.textTips.push(new TextTip(this.tileMap, ['Okey, let us', 'start this game', 'Be nice', 'it should be cool'], 410, 45))
-        this.textTips[this.textTips.length-1].setFont(10)
-        this.textTips.push(new TextTip(this.tileMap, ['Here you are an', 'old, poor mage', 'with very', 'big family'], 380, 140))
         this.textTips[this.textTips.length-1].setFont(13)
-        this.textTips.push(new TextTip(this.tileMap, ['All that you know', 'is about your live job', 'in circus:', 'juggling, joying...'], 240, 140))
+        this.textTips.push(new TextTip(this.tileMap, ['Okey, let\'s us', 'start this game', 'Be nice', 'it should be cool'], 350, 45))
         this.textTips[this.textTips.length-1].setFont(13)
-        this.textTips.push(new TextTip(this.tileMap, ['But it\'s about hard times:', 'New generation do not need', 'circuses anymore: they have computers', 'No money. In your pockets'], 65, 140))
+        this.textTips.push(new TextTip(this.tileMap, ['Here you are, an', 'old, poor mage', 'with very', 'big family'], 370, 140))
         this.textTips[this.textTips.length-1].setFont(13)
-        this.textTips.push(new TextTip(this.tileMap, ['But still huge family: lovely Nally, smart Ronsonus,', 'not so smart but strong Ronsoniy, little Ronny,', 'Gonny, Morry, offcource Vitty, Ritty.', 'Gilly, Silly.', 'And you are sure, your forgot someone.'], 69, 268))
+        this.textTips.push(new TextTip(this.tileMap, ['All your skills', 'is about your live job', 'in circus:', 'juggling, joying...'], 240, 140))
+        this.textTips[this.textTips.length-1].setFont(13)
+        this.textTips.push(new TextTip(this.tileMap, ['But times change:', 'New generation do not need', 'circuses anymore: they have computers', 'So, no money. In your pockets'], 65, 140))
+        this.textTips[this.textTips.length-1].setFont(13)
+        this.textTips.push(new TextTip(this.tileMap, ['But still a huge family: lovely Nally, smart Ronsonus,', 'not so smart but strong Ronsoniy, little Ronny,', 'Gonny, Morry, offcource Vitty, Ritty.', 'Gilly, Silly.', 'And you are sure, your forgot someone.'], 69, 268))
         this.textTips[this.textTips.length-1].setFont(9)
-        this.textTips.push(new TextTip(this.tileMap, ['My imaginary world is', 'your last opportynity', 'to resque your family from', 'hangry end.'], 250, 280))
-        this.textTips[this.textTips.length-1].setFont(9)
+        this.textTips.push(new TextTip(this.tileMap, ['My imaginary world is', 'your last opportynity', 'to resque your family from', 'hangry end.'], 230, 275))
+        this.textTips[this.textTips.length-1].setFont(12)
         this.textTips.push(new TextTip(this.tileMap, ['And you finally got it!', 'that\'s exactry why you are here.', 'Because of these coins.', 'Try to find all in this lvl', 'then we will talk'], 110, 370))
         this.textTips[this.textTips.length-1].setFont(9)
         
@@ -107,36 +107,49 @@ class Level1State{
         this.textTips[this.textTips.length-1].setFont(9)
         this.textTips.push(new TextTip(this.tileMap, ["Holy, Seems Someone", 'made this trap for', 'you. What are bad people.', 'But remember.','Your are skilled mage', 'Use your','"transisfuncation"(Arrow Up)', 'to become a bit lighter','', 'Then', 'Use \'Space\''], 35, 520))
         this.textTips[this.textTips.length-1].setFont(9)
-        this.textTips.push(new TextTip(this.tileMap, ["Nice feeling of flying", 'It\'s one of your mods.','Remember it.', 'Birdman is not very good','at turning', 'but speed and ','flying is awesome'], 230, 810))
+        this.textTips.push(new TextTip(this.tileMap, ["Nice feeling of flight", 'It\'s one of your mods.','Remember it.', 'Birdman is not very good','at turning', 'but speed and ','flying is awesome'], 230, 810))
         this.textTips[this.textTips.length-1].setFont(9)
-        this.textTips.push(new TextTip(this.tileMap, ['Nice form to grab', 'coins that\'s flying', 'You shoud pick all of', 'these coins for the','sake of your family.'], 389, 525))
+        this.textTips.push(new TextTip(this.tileMap, ['Nice form to grab', 'coins that\'s flying', 'You shoud pick all', 'coins for the','sake of your family.'], 389, 525))
         this.textTips[this.textTips.length-1].setFont(9)   
         this.textTips.push(...new Array(6).fill(new TextTip(this.tileMap, [], 0, 0)))
 
         
         Level1State.SPAWNLOCATION.push({x: 660, y: 800})
-        this.textTips.push(new TextTip(this.tileMap, ['Should use','other form', 'ArrowDownX2'], 680, 840))
+        this.textTips.push(new TextTip(this.tileMap, ['Should use','other skill', 'ArrowDownX2'], 768, 872))
         this.textTips[this.textTips.length-1].setFont(9)
-        this.textTips.push(new TextTip(this.tileMap, ['Fast, double', 'jump and', 'little, but', 'cannot take coins.', 'So, unfortunatly.'], 1065, 750))
+        this.textTips.push(new TextTip(this.tileMap, ['Fast, double', 'jump and', 'small body', 'one more', 'cool form'], 1065, 750))
         this.textTips[this.textTips.length-1].setFont(9)
         this.textTips.push(new TextTip(this.tileMap, [''], 950, 690))
         this.textTips[this.textTips.length-1].setFont(9)  
-        this.textTips.push(new TextTip(this.tileMap, ['Use <C> key to slow time in small/fast mode'], 750, 565))
+        this.textTips.push(new TextTip(this.tileMap, ['Ohh,.. Also you can slow down time with <C> key.'], 700, 565))
         this.textTips[this.textTips.length-1].setFont(9)
         this.textTips.push(new TextTip(this.tileMap, ['Now, you are ready to earn some money. Good luck there.'], 750, 500))
         this.textTips[this.textTips.length-1].setFont(9)
         this.textTips[this.textTips.length-1].cheight = 30
-        this.textTips.push(...new Array(8).fill(new TextTip(this.tileMap, [], 0, 0)))
+        this.textTips.push(...new Array(5).fill(new TextTip(this.tileMap, [], 0, 0)))
 
         Level1State.SPAWNLOCATION.push({x: 1232, y: 630})
-
-
+        this.textTips.push(new TextTip(this.tileMap, ['Several words about level','structure:first - it could be','somethimes hard to bit, so, work hard','second - it\'s separated from other levels by yellow blockes.','So, after you get all the coins, try to', 'find unlocked way to next level'], 1357, 765))
+        this.textTips[this.textTips.length-1].setFont(9)
+        this.textTips.push(new TextTip(this.tileMap, ['Very easy level to bit if','your are in rabbit mode. Do not','forget about double jump option in this mod.','Usually, it helps. Or you could simply ','fly through all coins in birdman mod.'], 1430, 660))
+        this.textTips[this.textTips.length-1].setFont(9)
+        this.textTips[this.textTips.length-1].cheight = 60;
+        this.textTips.push(...new Array(8).fill(new TextTip(this.tileMap, [], 0, 0)))
 
         Level1State.SPAWNLOCATION.push({x: 1504, y: 800})
+        this.textTips.push(new TextTip(this.tileMap, ['Sometimes this level is a pain.','Well, it\'s a pain unless you remember','<C> key. Although, use it ONLY if you are ','','','','"green" to this kind of games.'], 1510, 1000))
+        this.textTips[this.textTips.length-1].setFont(9)
+        this.textTips.push(...new Array(9).fill(new TextTip(this.tileMap, [], 0, 0)))
 
         Level1State.SPAWNLOCATION.push({x: 2112, y: 890})
+        this.textTips.push(new TextTip(this.tileMap, ['"Woow, why yellow blockes weren\'t','opened", you could ask. It\'s not','a bag, as you could suggest. It is because', '','','', 'this game is not LINEAR, shake your','brainr to recollect, where you saw yellow','boxes. And go there.'], 1420, 1000))
+        this.textTips[this.textTips.length-1].setFont(9)
+        this.textTips[this.textTips.length-1].cheight = 30;
+        this.textTips.push(...new Array(9).fill(new TextTip(this.tileMap, [], 0, 0)))
 
         Level1State.SPAWNLOCATION.push({x: 2112, y: 1090})
+        this.textTips.push(new TextTip(this.tileMap, ['Execuse me now. I see, you\'re much better mage,','than i thought. And I am very smart...oh, i mean,','you are a bit smart.,','I could leave you here.','Now you depend only on yourself, there are','actually tons of coins in next levels. Decide,','do you have enought to feed your big family.','I should help other strangers too.','Grab as many coins as you can.','See you late. bye...'], 2100, 1250))
+        this.textTips[this.textTips.length-1].setFont(9)
 
         Level1State.SPAWNLOCATION.push({x: 690, y: 416})
 
